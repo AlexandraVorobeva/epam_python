@@ -10,8 +10,6 @@ from typing import Sequence
 
 
 def check_fibonacci(data: Sequence[int]) -> bool:
-    if not isinstance(data, Sequence):
-        raise TypeError("Данные должны бвть последовательностью")
     if len(data) < 3:
         return False
     for i in range(2, len(data)):
