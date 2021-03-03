@@ -11,8 +11,6 @@ Examples:
 """
 from typing import List
 
-import pytest
-
 
 def find_maximal_subarray_sum(nums: List[int], k: int) -> int:
     if k > len(nums):
@@ -23,21 +21,3 @@ def find_maximal_subarray_sum(nums: List[int], k: int) -> int:
             window += nums[i] - nums[i - k]
             max_sum = max(max_sum, window)
         return max_sum
-
-
-@pytest.mark.parametrize(
-    ["nums", "k", "expected_result"],
-    [
-        ([1, 3, -1, -3, 5, 3, 6, 7], 3, 16),
-        ([-1, -2, 3, 1, 4], 3, 8),
-        ([1, 2, 3, 4], 2, 7),
-    ],
-)
-def test_find_maximal_subarray_sum(nums: List[int], k: int, expected_result: int):
-    result = find_maximal_subarray_sum(nums, k)
-    assert result == expected_result
-
-
-def test_find_maximal_subarray_sum_raises():
-    with pytest.raises(ValueError):
-        find_maximal_subarray_sum([1, 3, 6, 7], 5)

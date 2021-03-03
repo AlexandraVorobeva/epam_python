@@ -15,8 +15,6 @@ with open("some_file.txt") as fi:
 """
 from typing import Tuple
 
-import pytest
-
 
 def find_maximum_and_minimum(file_name: str) -> Tuple[int, int]:
     with open(file_name) as fi:
@@ -30,15 +28,3 @@ def find_maximum_and_minimum(file_name: str) -> Tuple[int, int]:
             if minline > int(min(line)):
                 minline = int(min(line))
         return minline, maxline
-
-
-@pytest.mark.parametrize(
-    ["file_name", "expected_result"],
-    [
-        ("test1_find_max_min.txt", (-5, 8)),
-        ("test2_find_max_min.txt", (1, 1)),
-    ],
-)
-def test_maximum_and_minimum(file_name: str, expected_result: Tuple[int, int]):
-    result = find_maximum_and_minimum(file_name)
-    assert result == expected_result
