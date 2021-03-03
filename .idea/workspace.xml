@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="60fc685d-bdef-4c7f-a26e-4029abce2b97" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1pDCwsOhYn3CmcH7omDW3anuFam" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.externalTools" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/hw_2/tests" />
+      <recent name="$PROJECT_DIR$/hw_1/tests" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python tests.pytest for test_hw3.test_combinations">
+    <configuration name="pytest for test_hw2.test_major_minor" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="epam_python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/hw_2/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_hw2.test_major_minor&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for test_hw3.test_combinations" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="epam_python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/hw_2/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_hw3.test_combinations&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for test_hw4.test_cache" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="epam_python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/hw_2/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_hw4.test_cache&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest in test_hw2.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="epam_python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/hw_2/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/hw_2/tests/test_hw2.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest in test_hw3.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="epam_python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/hw_2/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/hw_2/tests/test_hw3.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python tests.pytest for test_hw3.test_combinations" />
+        <item itemvalue="Python tests.pytest for test_hw2.test_major_minor" />
+        <item itemvalue="Python tests.pytest in test_hw3.py" />
+        <item itemvalue="Python tests.pytest for test_hw4.test_cache" />
+        <item itemvalue="Python tests.pytest in test_hw2.py" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="60fc685d-bdef-4c7f-a26e-4029abce2b97" name="Default Changelist" comment="" />
+      <created>1614708516306</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1614708516306</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="767" y="147" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1614756523474">
+      <screen x="0" y="23" width="1440" height="823" />
+    </state>
+    <state x="767" y="147" key="#com.intellij.ide.macro.MacrosDialog/0.23.1440.823@0.23.1440.823" timestamp="1614756523474" />
+    <state x="747" y="272" key="#com.intellij.tools.ToolEditorDialog" timestamp="1614756524815">
+      <screen x="0" y="23" width="1440" height="823" />
+    </state>
+    <state x="747" y="272" key="#com.intellij.tools.ToolEditorDialog/0.23.1440.823@0.23.1440.823" timestamp="1614756524815" />
+    <state width="1067" height="197" key="GridCell.Tab.0.bottom" timestamp="1614782140607">
+      <screen x="0" y="23" width="1440" height="823" />
+    </state>
+    <state width="1067" height="197" key="GridCell.Tab.0.bottom/0.23.1440.823@0.23.1440.823" timestamp="1614782140607" />
+    <state width="1067" height="197" key="GridCell.Tab.0.center" timestamp="1614782140606">
+      <screen x="0" y="23" width="1440" height="823" />
+    </state>
+    <state width="1067" height="197" key="GridCell.Tab.0.center/0.23.1440.823@0.23.1440.823" timestamp="1614782140606" />
+    <state width="1067" height="197" key="GridCell.Tab.0.left" timestamp="1614782140605">
+      <screen x="0" y="23" width="1440" height="823" />
+    </state>
+    <state width="1067" height="197" key="GridCell.Tab.0.left/0.23.1440.823@0.23.1440.823" timestamp="1614782140605" />
+    <state width="1067" height="197" key="GridCell.Tab.0.right" timestamp="1614782140606">
+      <screen x="0" y="23" width="1440" height="823" />
+    </state>
+    <state width="1067" height="197" key="GridCell.Tab.0.right/0.23.1440.823@0.23.1440.823" timestamp="1614782140606" />
+    <state x="519" y="74" width="921" height="722" key="SettingsEditor" timestamp="1614756526555">
+      <screen x="0" y="23" width="1440" height="823" />
+    </state>
+    <state x="519" y="74" width="921" height="722" key="SettingsEditor/0.23.1440.823@0.23.1440.823" timestamp="1614756526555" />
+    <state x="511" y="356" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1614760178090">
+      <screen x="0" y="23" width="1440" height="823" />
+    </state>
+    <state x="511" y="356" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.823@0.23.1440.823" timestamp="1614760178090" />
+    <state x="728" y="190" width="598" height="490" key="find.popup" timestamp="1614761406696">
+      <screen x="0" y="23" width="1440" height="823" />
+    </state>
+    <state x="728" y="190" width="598" height="490" key="find.popup/0.23.1440.823@0.23.1440.823" timestamp="1614761406696" />
+  </component>
+</project>
