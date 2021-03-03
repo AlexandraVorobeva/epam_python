@@ -9,8 +9,9 @@ from hw_1.task05 import find_maximal_subarray_sum
     ["nums", "k", "expected_result"],
     [
         ([1, 3, -1, -3, 5, 3, 6, 7], 3, 16),
-        ([-1, -2, 3, 1, 4], 3, 8),
-        ([1, 2, 3, 4], 2, 7),
+        ([1, -3, -3, -5, 1, -3, 1, 1, 5], 4, 4),
+        ([1, 3, -1, -3, 5, 3, 6, 7], 1, 7),
+        ([1, 3, 5, 7], 4, 16),
     ],
 )
 def test_find_maximal_subarray_sum(nums: List[int], k: int, expected_result: int):

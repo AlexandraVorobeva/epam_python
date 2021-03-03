@@ -8,7 +8,7 @@ from hw_1.task03 import find_maximum_and_minimum
 @pytest.mark.parametrize(
     ["file_name", "expected_result"],
     [
-        ("test1_find_max_min.txt", (-5, 8)),
+        ("test1_find_max_min.txt", (-5, 34)),
         ("test2_find_max_min.txt", (1, 1)),
     ],
 )

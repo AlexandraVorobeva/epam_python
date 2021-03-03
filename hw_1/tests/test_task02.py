@@ -10,7 +10,7 @@ from hw_1.task02 import check_fibonacci
     [
         ([1, 1, 2, 3], True),
         ([55, 89, 144], True),
-        ([5], True),
+        ([5], False),
         ([1, 8, 34], False),
         ([3, 4, 5], False),
         ([], False),

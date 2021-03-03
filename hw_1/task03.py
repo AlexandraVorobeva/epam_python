@@ -23,8 +23,8 @@ def find_maximum_and_minimum(file_name: str) -> Tuple[int, int]:
         minline = int(min(line))
         for line in fi:
             line = line.strip().split(", ")
-            if maxline < int(max(line)):
+            if maxline <= int(max(line)):
                 maxline = int(max(line))
-            if minline > int(min(line)):
+            if minline >= int(min(line)):
                 minline = int(min(line))
         return minline, maxline

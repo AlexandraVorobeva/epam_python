@@ -15,9 +15,11 @@ from typing import List
 def find_maximal_subarray_sum(nums: List[int], k: int) -> int:
     if k > len(nums):
         raise ValueError("k должно быть меньше строки")
-    else:
-        window = max_sum = sum(nums[:k])
-        for i in range(k, len(nums)):
-            window += nums[i] - nums[i - k]
-            max_sum = max(max_sum, window)
-        return max_sum
+    max_sum_sub = nums[0]
+    for i in range(len(nums) - k + 1):
+        cur_sum_sub = 0
+        for j in range(k):
+            cur_sum_sub += nums[i + j]
+            if cur_sum_sub > max_sum_sub:
+                max_sum_sub = cur_sum_sub
+    return max_sum_sub
