@@ -10,6 +10,8 @@ from typing import List
 
 
 def check_sum_of_four(a: List[int], b: List[int], c: List[int], d: List[int]) -> int:
+    """This function finds how many tuples (i, j, k, l)
+    there are such that A[i] + B[j] + C[k] + D[l] is zero"""
     return len(
         [
             i + j + k + m

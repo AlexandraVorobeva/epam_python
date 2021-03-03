@@ -17,6 +17,7 @@ from typing import Tuple
 
 
 def find_maximum_and_minimum(file_name: str) -> Tuple[int, int]:
+    """This function reads input line-by-line, and find maximum and minimum values"""
     with open(file_name) as fi:
         minimum = maximum = int(fi.readline())
         for line in fi:

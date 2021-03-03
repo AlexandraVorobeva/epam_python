@@ -13,8 +13,7 @@ from typing import List
 
 
 def find_maximal_subarray_sum(nums: List[int], k: int) -> int:
-    if k > len(nums):
-        raise ValueError("k должно быть меньше строки")
+    """This function finds a sub-array with maximal sum"""
     max_sum_sub = nums[0]
     for i in range(len(nums) - k + 1):
         cur_sum_sub = 0
