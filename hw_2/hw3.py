@@ -19,4 +19,6 @@ from typing import List, Any
 
 
 def combinations(*args: List[Any]) -> List[List]:
+    """Return all possible lists of items where the first element is from the first list,
+    the second is from the second and so one"""
     return [list(i) for i in itertools.product(*args)]

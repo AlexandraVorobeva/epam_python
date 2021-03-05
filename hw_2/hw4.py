@@ -22,14 +22,16 @@ from collections import Callable
 
 
 def cache(func: Callable) -> Callable:
-    d_cacher = []
+    """This function accepts any function for cache
+    and returns cached function"""
+    cacher = []
 
     def func_cache(*args):
-        for safe_args, results in d_cacher:
+        for safe_args, results in cacher:
             if safe_args == args:
                 return results
         value = func(*args)
-        d_cacher.append((args, value))
+        cacher.append((args, value))
         return value
 
     return func_cache

@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="60fc685d-bdef-4c7f-a26e-4029abce2b97" name="Default Changelist" comment="" />
+    <list default="true" id="60fc685d-bdef-4c7f-a26e-4029abce2b97" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw_2/hw1.py" beforeDir="false" afterPath="$PROJECT_DIR$/hw_2/hw1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw_2/hw2.py" beforeDir="false" afterPath="$PROJECT_DIR$/hw_2/hw2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw_2/hw3.py" beforeDir="false" afterPath="$PROJECT_DIR$/hw_2/hw3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw_2/hw4.py" beforeDir="false" afterPath="$PROJECT_DIR$/hw_2/hw4.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw_2/hw5.py" beforeDir="false" afterPath="$PROJECT_DIR$/hw_2/hw5.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw_2/tests/test_hw1.py" beforeDir="false" afterPath="$PROJECT_DIR$/hw_2/tests/test_hw1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw_2/tests/test_hw5.py" beforeDir="false" afterPath="$PROJECT_DIR$/hw_2/tests/test_hw5.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,7 +44,7 @@
       <recent name="$PROJECT_DIR$/hw_1/tests" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.pytest for test_hw3.test_combinations">
+  <component name="RunManager" selected="Python tests.pytest for test_hw2.test_major_minor">
     <configuration name="pytest for test_hw2.test_major_minor" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="epam_python" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -84,7 +93,7 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest in test_hw2.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest in test_hw1.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="epam_python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -96,11 +105,11 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/hw_2/tests/test_hw2.py&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/hw_2/tests/test_hw1.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest in test_hw3.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest in test_hw5.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="epam_python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -112,17 +121,17 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/hw_2/tests/test_hw3.py&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/hw_2/tests/test_hw5.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.pytest for test_hw3.test_combinations" />
         <item itemvalue="Python tests.pytest for test_hw2.test_major_minor" />
-        <item itemvalue="Python tests.pytest in test_hw3.py" />
+        <item itemvalue="Python tests.pytest in test_hw1.py" />
         <item itemvalue="Python tests.pytest for test_hw4.test_cache" />
-        <item itemvalue="Python tests.pytest in test_hw2.py" />
+        <item itemvalue="Python tests.pytest for test_hw3.test_combinations" />
+        <item itemvalue="Python tests.pytest in test_hw5.py" />
       </list>
     </recent_temporary>
   </component>
@@ -148,22 +157,22 @@
       <screen x="0" y="23" width="1440" height="823" />
     </state>
     <state x="747" y="272" key="#com.intellij.tools.ToolEditorDialog/0.23.1440.823@0.23.1440.823" timestamp="1614756524815" />
-    <state width="1067" height="197" key="GridCell.Tab.0.bottom" timestamp="1614782140607">
+    <state width="1273" height="276" key="GridCell.Tab.0.bottom" timestamp="1614937115341">
       <screen x="0" y="23" width="1440" height="823" />
     </state>
-    <state width="1067" height="197" key="GridCell.Tab.0.bottom/0.23.1440.823@0.23.1440.823" timestamp="1614782140607" />
-    <state width="1067" height="197" key="GridCell.Tab.0.center" timestamp="1614782140606">
+    <state width="1273" height="276" key="GridCell.Tab.0.bottom/0.23.1440.823@0.23.1440.823" timestamp="1614937115341" />
+    <state width="1273" height="276" key="GridCell.Tab.0.center" timestamp="1614937115340">
       <screen x="0" y="23" width="1440" height="823" />
     </state>
-    <state width="1067" height="197" key="GridCell.Tab.0.center/0.23.1440.823@0.23.1440.823" timestamp="1614782140606" />
-    <state width="1067" height="197" key="GridCell.Tab.0.left" timestamp="1614782140605">
+    <state width="1273" height="276" key="GridCell.Tab.0.center/0.23.1440.823@0.23.1440.823" timestamp="1614937115340" />
+    <state width="1273" height="276" key="GridCell.Tab.0.left" timestamp="1614937115339">
       <screen x="0" y="23" width="1440" height="823" />
     </state>
-    <state width="1067" height="197" key="GridCell.Tab.0.left/0.23.1440.823@0.23.1440.823" timestamp="1614782140605" />
-    <state width="1067" height="197" key="GridCell.Tab.0.right" timestamp="1614782140606">
+    <state width="1273" height="276" key="GridCell.Tab.0.left/0.23.1440.823@0.23.1440.823" timestamp="1614937115339" />
+    <state width="1273" height="276" key="GridCell.Tab.0.right" timestamp="1614937115340">
       <screen x="0" y="23" width="1440" height="823" />
     </state>
-    <state width="1067" height="197" key="GridCell.Tab.0.right/0.23.1440.823@0.23.1440.823" timestamp="1614782140606" />
+    <state width="1273" height="276" key="GridCell.Tab.0.right/0.23.1440.823@0.23.1440.823" timestamp="1614937115340" />
     <state x="519" y="74" width="921" height="722" key="SettingsEditor" timestamp="1614756526555">
       <screen x="0" y="23" width="1440" height="823" />
     </state>
