@@ -10,10 +10,20 @@ from typing import Sequence
 
 
 def check_fibonacci(data: Sequence[int]) -> bool:
-    """Return if the given sequence is a Fibonacci sequence"""
+    """
+
+    Args:
+        data: sequence of integers.
+
+    Returns:
+        bool: true for success if the given sequence is a Fibonacci sequence,
+        False otherwise.
+    """
     if len(data) < 3:
         return False
     for i in range(2, len(data)):
+        if abs(data[i]) < abs(data[i - 1]):
+            return False
         if data[i] != data[i - 1] + data[i - 2]:
             return False
 

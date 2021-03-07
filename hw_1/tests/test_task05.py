@@ -18,7 +18,3 @@ def test_find_maximal_subarray_sum(nums: List[int], k: int, expected_result: int
     result = find_maximal_subarray_sum(nums, k)
     assert result == expected_result
 
-
-def test_find_maximal_subarray_sum_raises():
-    with pytest.raises(ValueError):
-        find_maximal_subarray_sum([1, 3, 6, 7], 5)
