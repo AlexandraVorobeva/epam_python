@@ -11,6 +11,8 @@ from typing import Sequence
 
 def check_fibonacci(data: Sequence[int]) -> bool:
     """
+    This function accepts a Sequence of integers, and
+    returns if the given sequence is a Fibonacci sequence.
 
     Args:
         data: sequence of integers.
@@ -21,9 +23,9 @@ def check_fibonacci(data: Sequence[int]) -> bool:
     """
     if len(data) < 3:
         return False
+    if abs(data[0]) > abs(data[1]):
+        return False
     for i in range(2, len(data)):
-        if abs(data[i]) < abs(data[i - 1]):
-            return False
         if data[i] != data[i - 1] + data[i - 2]:
             return False
 

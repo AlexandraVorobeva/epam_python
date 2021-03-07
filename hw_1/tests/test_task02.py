@@ -14,6 +14,7 @@ from hw_1.task02 import check_fibonacci
         ([1, 8, 34], False),
         ([3, 4, 5], False),
         ([], False),
+        ([5, 3, 8], False),
     ],
 )
 def test_check_fibonacci(value, expected_result: bool):

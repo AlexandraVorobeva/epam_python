@@ -24,14 +24,13 @@ def find_maximal_subarray_sum(nums: List[int], k: int) -> int:
         int: maximal sum of sub-array
     """
     max_sum_sub = 0
-    if len(nums) < k or k == 0:
-        return max_sum_sub
-    else:
-        for i in range(len(nums) - k + 1):
-            cur_sum_sub = 0
-            for j in range(k):
-                cur_sum_sub += nums[i + j]
-                if cur_sum_sub > max_sum_sub:
-                    max_sum_sub = cur_sum_sub
-        return max_sum_sub
+    if len(nums) < k:
+        k = len(nums)
+    for i in range(len(nums) - k + 1):
+        cur_sum_sub = 0
+        for j in range(k):
+            cur_sum_sub += nums[i + j]
+            if cur_sum_sub > max_sum_sub:
+                max_sum_sub = cur_sum_sub
+    return max_sum_sub
 
