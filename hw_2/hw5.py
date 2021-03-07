@@ -18,7 +18,7 @@ assert = custom_range(string.ascii_lowercase, 'p', 'g', -2) == ['p', 'n', 'l', '
 
 def custom_range(ranged, start, stop=None, step=1):
     """This function accepts any iterable of unique values and then it behaves as range function"""
-    if len(ranged) == 0:
+    if ranged == 0:
         raise Exception("Вы ввели 0 элементов")
     if len(set(ranged)) != len(ranged):
         raise Exception("Вы ввели неуникальное значение")

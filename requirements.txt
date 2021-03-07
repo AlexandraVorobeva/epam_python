@@ -1,0 +1,7 @@
+black==20.8b1
+isort==5.7.0
+pip-api==0.0.19
+pipreqs==0.4.10
+pytest==6.2.2
+requests==2.25.1
+
