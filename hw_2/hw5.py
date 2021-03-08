@@ -16,13 +16,3 @@ assert = custom_range(string.ascii_lowercase, 'p', 'g', -2) == ['p', 'n', 'l', '
 """
 
 
-def custom_range(ranged, start, stop=None, step=1):
-    """This function accepts any iterable of unique values and then it behaves as range function"""
-    if ranged == 0:
-        raise Exception("Вы ввели 0 элементов")
-    if len(set(ranged)) != len(ranged):
-        raise Exception("Вы ввели неуникальное значение")
-    if stop is None:
-        stop = start
-        start = ranged[0]
-    return [s for s in ranged[ranged.index(start) : ranged.index(stop) : step]]
