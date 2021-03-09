@@ -15,15 +15,22 @@ Example 2:
 
 Input: [2,2,1,1,1,2,2]
 Output: 2, 1
-
 """
 import collections
 from typing import List, Tuple
 
 
 def major_and_minor_elem(inp: List) -> Tuple[int, int]:
-    """This function finds the most common and the least common elements in array"""
+    """
+    This function finds the most common and the least common elements in array.
+
+    Args:
+        inp: non-empty list of integer values
+
+    Returns:
+        tuple: the most common and the least common elements in array
+
+    """
+
     elem = collections.Counter(inp).most_common()
-    maximum = elem[0][0]
-    minimum = elem[-1][0]
-    return maximum, minimum
+    return elem[0][0], elem[-1][0]
