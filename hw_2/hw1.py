@@ -27,13 +27,10 @@ def get_longest_diverse_words(file_path: str) -> List[str]:
         for line in text:
             clean_line = line.translate(str.maketrans("", "", string.punctuation)).split()
             for word in clean_line:
-                list_of_uniq = []
-                for char in word:
-                    if char not in list_of_uniq:
-                        list_of_uniq.append(char)
-                count_dictionary[word] = len(list_of_uniq)
+                count_dictionary[word] = len(set(word))
         result_list = [i[0] for i in sorted(count_dictionary.items(), reverse=True, key=lambda a: a[1])[:10]]
         return result_list
+
 
 
 def get_rarest_char(file_path: str) -> str:
@@ -93,7 +90,7 @@ def count_non_ascii_chars(file_path: str) -> int:
     with open(file_path, encoding="unicode-escape") as text:
         res = 0
         for line in text:
-            res += len([char for char in line if char not in string.printable])
+            res += len([char for char in line if not char.isascii()])
         return res
 
 
@@ -112,7 +109,7 @@ def get_most_common_non_ascii_char(file_path: str) -> str:
     with open(file_path, encoding="unicode-escape") as text:
         for line in text:
             for char in line:
-                if char not in string.printable and char != " ":
+                if not char.isascii() and char != " ":
                     if char in count_dictionary:
                         count_dictionary[char] += 1
                     else:

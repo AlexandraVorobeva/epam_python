@@ -31,11 +31,7 @@ def custom_range(sequence, *args) -> List[any]:
 
     """
     sl = slice(*args)
-    if sl.start:
-        start = sequence.index(sl.start)
-    else:
-        start = 0
+    start = sequence.index(sl.start) if sl.start else 0
     stop, step = sequence.index(sl.stop), sl.step or 1
-    new_sequence = sequence[start:stop:step]
-    return list(new_sequence)
+    return list(sequence[start:stop:step])
 
