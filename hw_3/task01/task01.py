@@ -18,10 +18,9 @@ def cache(times: int):
                 if args in cacher and cacher[args][1] < times:
                     cacher[args][1] += 1
                     return cacher[args][0]
-                else:
-                    value = func(*args)
-                    cacher[args] = [value, 0]
-                    return value
+                value = func(*args)
+                cacher[args] = [value, 0]
+                return value
             return func(*args)
 
         return func_cache
