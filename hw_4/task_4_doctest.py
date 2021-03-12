@@ -39,9 +39,10 @@ def fizzbuzz(n: int) -> List[str]:
     Function takes a number N as an input and returns N FizzBuzz numbers.
 
     Args:
-        n:
+        n: number, sequence length
 
     Returns:
+        List: FizzBuzz sequence
 
     Instruction:
             - Install Python 3.8 (https://www.python.org/downloads/)
@@ -70,7 +71,7 @@ def fizzbuzz(n: int) -> List[str]:
         raise ValueError("n must be > 0")
     res = []
     for i in range(1, n + 1):
-        if i % 3 == 0 and i % 5 == 0:
+        if i % 15 == 0:
             res.append("Fizz Buzz")
         elif i % 3 == 0:
             res.append("Fizz")
