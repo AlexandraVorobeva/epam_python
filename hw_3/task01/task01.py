@@ -15,13 +15,13 @@ def cache(times: int):
     def wrapper(func):
         def func_cache(*args):
             if times > 0:
-                if args not in cacher:
+                if args in cacher and cacher[args][1] < times:
+                    cacher[args][1] += 1
+                    return cacher[args][0]
+                else:
                     value = func(*args)
                     cacher[args] = [value, 0]
                     return value
-                if cacher[args][1] < times:
-                    cacher[args][1] += 1
-                    return cacher[args][0]
             return func(*args)
 
         return func_cache
