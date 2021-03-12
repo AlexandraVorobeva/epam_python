@@ -19,19 +19,9 @@ def cache(times: int):
                     value = func(*args)
                     cacher[args] = [value, 0]
                     return value
-<<<<<<< Updated upstream
-                elif cacher[args][1] < times:
-                    cacher[args][1] += 1
-                    return cacher[args][0]
-                else:
-                    value = func(*args)
-                    cacher[args] = [value, 0]
-                    return value
-=======
                 if cacher[args][1] < times:
                     cacher[args][1] += 1
                     return cacher[args][0]
->>>>>>> Stashed changes
             return func(*args)
 
         return func_cache
