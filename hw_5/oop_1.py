@@ -68,7 +68,7 @@ class Homework:
         """
         homework_deadline = self.created + self.deadline
         now = datetime.now()
-        return not now > homework_deadline
+        return now <= homework_deadline
 
 
 class Student:
