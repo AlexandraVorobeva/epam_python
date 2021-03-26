@@ -104,7 +104,7 @@ class Homework:
 
 class Student(Person):
     """
-     A class to represent a student which has method 'do_homework'.
+    A class to represent a student which has method 'do_homework'.
     'do_homework' takes class Homework object as argument
     and return an instance of HomeworkResult if deadline of homework is not passed
     or raise DeadlineError and return None otherwise.
