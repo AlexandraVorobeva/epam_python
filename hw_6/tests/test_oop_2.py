@@ -57,16 +57,13 @@ def test_homework_result_with_not_a_homework(good_student):
 
 
 def test_check_homework(opp_teacher, good_student, oop_hw):
-    result = good_student.do_homework(oop_hw, 'I have done this hw')
+    result = good_student.do_homework(oop_hw, "I have done this hw")
     assert opp_teacher.check_homework(result) is True
     assert result.homework in opp_teacher.homework_done
 
 
 def test_check_homework_unique_solution(
-        good_student,
-        opp_teacher,
-        advanced_python_teacher,
-        oop_hw
+    good_student, opp_teacher, advanced_python_teacher, oop_hw
 ):
     result_1 = good_student.do_homework(oop_hw, "I have done this hw")
     opp_teacher.check_homework(result_1)
@@ -85,4 +82,3 @@ def test_reset_result():
 def test_reset_result_delete_all_from_homework_done(oop_hw, docs_hw):
     Teacher.reset_results()
     assert not bool(Teacher.homework_done)
-

@@ -24,7 +24,7 @@ def instances_counter(cls):
     """
     cls.counter = 0
 
-    def __new__(Cls):
+    def __new__(сls, *args, **kwargs):
         """
         Creates __new__ method and assign it to existing class.
 
@@ -35,12 +35,11 @@ def instances_counter(cls):
 
         """
         cls.counter += 1
-        instance = super(cls, Cls).__new__(Cls)
+        instance = super(cls, cls).__new__(сls, *args, **kwargs)
         return instance
 
-    cls.__new__ = __new__
-
-    def get_created_instances(*arg):
+    @classmethod
+    def get_created_instances(cls):
         """
         This method returns count of instances of the class created.
 
@@ -52,7 +51,8 @@ def instances_counter(cls):
         """
         return cls.counter
 
-    def reset_instances_counter(*arg):
+    @classmethod
+    def reset_instances_counter(cls):
         """
         This method resets counter and returns previous value.
 
@@ -65,6 +65,7 @@ def instances_counter(cls):
         cls.counter, count_last = 0, cls.counter
         return count_last
 
+    cls.__new__ = __new__
     cls.get_created_instances = get_created_instances
     cls.reset_instances_counter = reset_instances_counter
 
@@ -76,7 +77,7 @@ class User:
     pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
 
     User.get_created_instances()  # 0
     user, _, _ = User(), User(), User()
