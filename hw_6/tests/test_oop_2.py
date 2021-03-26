@@ -38,16 +38,6 @@ def docs_hw(opp_teacher):
     return opp_teacher.create_homework("Read docs", 5)
 
 
-def test_create_teacher(opp_teacher):
-    assert opp_teacher.first_name == "Daniil"
-    assert opp_teacher.last_name == "Shadrin"
-
-
-def test_create_student(lazy_student):
-    assert lazy_student.first_name == "Roman"
-    assert lazy_student.last_name == "Petrov"
-
-
 def test_do_current_homework(good_student, docs_hw):
     homework = good_student.do_homework(docs_hw, "I have done this hw.")
     assert isinstance(homework, HomeworkResult)
@@ -66,15 +56,25 @@ def test_homework_result_with_not_a_homework(good_student):
         HomeworkResult(good_student, "fff", "Solution")
 
 
-def test_check_homework_unique_solution(good_student, lazy_student, opp_teacher):
-    new_homework = Homework("New text", 3)
-    result_1 = lazy_student.do_homework(new_homework, "The same solution")
-    result_2 = good_student.do_homework(new_homework, "The same solution")
-    assert len(opp_teacher.homework_done[new_homework]) == 0
+def test_check_homework(opp_teacher, good_student, oop_hw):
+    result = good_student.do_homework(oop_hw, 'I have done this hw')
+    assert opp_teacher.check_homework(result) is True
+    assert result.homework in opp_teacher.homework_done
+
+
+def test_check_homework_unique_solution(
+        good_student,
+        opp_teacher,
+        advanced_python_teacher,
+        oop_hw
+):
+    result_1 = good_student.do_homework(oop_hw, "I have done this hw")
     opp_teacher.check_homework(result_1)
-    assert len(opp_teacher.homework_done[new_homework]) == 1
-    opp_teacher.check_homework(result_2)
-    assert len(opp_teacher.homework_done[new_homework]) == 1
+    temp_1 = opp_teacher.homework_done
+    opp_teacher.check_homework(result_1)
+    temp_2 = Teacher.homework_done
+    Teacher.reset_results()
+    assert temp_1 == temp_2
 
 
 def test_reset_result():

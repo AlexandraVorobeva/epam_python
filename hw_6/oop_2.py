@@ -56,12 +56,10 @@ from datetime import datetime, timedelta
 
 class DeadlineError(Exception):
     """Exception for timeout homework deadline"""
-    def __init__(self):
-        super().__init__("You are late.")
 
 
 class Person:
-    """ A class to represent a person. """
+    """A class to represent a person. """
     def __init__(self, first_name, last_name):
         """
         Create an instance of a person.
@@ -121,11 +119,10 @@ class Student(Person):
 
         Returns:
             cls: completed homeworks
-
         """
         if homework.is_active():
             return HomeworkResult(self, homework, solution)
-        raise DeadlineError()
+        raise DeadlineError("You are late")
 
 
 class HomeworkResult:
@@ -140,7 +137,7 @@ class HomeworkResult:
             solution: some text as a solution for homework
         """
         if not isinstance(homework, Homework):
-            raise TypeError("You gave a not Homework object.")
+            raise TypeError("It's not Homework object.")
         self.homework = homework
         self.solution = solution
         self.author = student
@@ -155,7 +152,8 @@ class Teacher(Person):
 
     homework_done = defaultdict(list)
 
-    def create_homework(self, text, deadline):
+    @staticmethod
+    def create_homework(text, deadline):
         """
         Returns the instance of class Homework with attributes 'text' and 'deadline'.
 
@@ -176,17 +174,17 @@ class Teacher(Person):
             hw_result: HomeworkResult object
 
         Returns:
-            bool: False - if homework incorrect, True otherwise
+            bool: False - if homework incorrect, True otherwise.
 
         """
-        if len(hw_result.solution) < 5:
+        if len(hw_result.solution) > 5:
+            if hw_result not in self.homework_done[hw_result.homework]:
+                self.homework_done[hw_result.homework].append(hw_result)
+                return True
             return False
-        for _items in Teacher.homework_done[hw_result.homework]:
-            if hw_result.solution in _items.solution:
-                return False
-        Teacher.homework_done[hw_result.homework].append(hw_result)
 
-    def reset_results(homework = None):
+    @classmethod
+    def reset_results(cls, homework=None):
         """
         If Homework is given - method delete all saved solutions in 'homework_done' for this Homework.
         If no argument is given, method reset all 'homework_done'
@@ -196,9 +194,9 @@ class Teacher(Person):
 
         """
         if homework is None:
-            Teacher.homework_done.clear()
+            cls.homework_done.clear()
         else:
-            Teacher.homework_done.pop(homework)
+            cls.homework_done.pop(homework)
 
 
 if __name__ == '__main__':
