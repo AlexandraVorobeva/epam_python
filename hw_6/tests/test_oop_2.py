@@ -1,6 +1,6 @@
 import pytest
 
-from hw_6.oop_2 import DeadlineError, Homework, HomeworkResult, Student, Teacher
+from hw_6.oop_2 import DeadlineError, HomeworkResult, Student, Teacher
 
 
 @pytest.fixture()
@@ -62,23 +62,27 @@ def test_check_homework(opp_teacher, good_student, oop_hw):
     assert result.homework in opp_teacher.homework_done
 
 
-def test_check_homework_unique_solution(
-    good_student, opp_teacher, advanced_python_teacher, oop_hw
-):
-    result_1 = good_student.do_homework(oop_hw, "I have done this hw")
-    opp_teacher.check_homework(result_1)
-    temp_1 = opp_teacher.homework_done
-    opp_teacher.check_homework(result_1)
-    temp_2 = Teacher.homework_done
-    Teacher.reset_results()
-    assert temp_1 == temp_2
-
-
 def test_reset_result():
     Teacher.reset_results()
     assert len(Teacher.homework_done) == 0
 
 
-def test_reset_result_delete_all_from_homework_done(oop_hw, docs_hw):
+def test_reset_result_delete_all_from_homework_done():
     Teacher.reset_results()
     assert not bool(Teacher.homework_done)
+
+
+def test_reset_result_delete_one_homework(oop_hw, opp_teacher, good_student):
+    result = good_student.do_homework(oop_hw, "I have done this hw")
+    opp_teacher.check_homework(result)
+    assert len(Teacher.homework_done) == 1
+    opp_teacher.reset_results()
+    assert Teacher.homework_done == {}
+
+
+def test_check_homework_unique_solution(good_student, oop_hw, opp_teacher):
+    result = good_student.do_homework(oop_hw, "I have done this hw")
+    result_2 = good_student.do_homework(oop_hw, "I have done this hw")
+    opp_teacher.check_homework(result)
+    opp_teacher.check_homework(result_2)
+    assert len(opp_teacher.homework_done) == 1
