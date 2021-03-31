@@ -21,7 +21,7 @@ def test_get_item(presidents):
 
 def test_contains(presidents):
     assert ("Yeltsin" in presidents) is True
-    assert ("Washington" in presidents) is False
+    assert ("abcd" in presidents) is False
 
 
 def test_iter(presidents):
