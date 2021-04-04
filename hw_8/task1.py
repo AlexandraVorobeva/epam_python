@@ -8,22 +8,19 @@ class KeyValueStorage:
     """
 
     def __init__(self, filename: str):
-        self.dict = {}
+        self.data_dict = {}
         with open(filename, "r") as fl:
-            key_value = fl.read()
-        key_value = [list(item.split("=")) for item in key_value.split()]
-        for item in key_value:
-            key, value = item
-            value = value.rstrip()
-            if iskeyword(key) or not key.isidentifier():
-                raise ValueError("Incorrect key!")
-            if value.isdigit():
-                value = int(value)
-            if key not in self.dict:
-                self.dict[key] = value
+            file = fl.readlines()
+            for line in file:
+                key, value = line.strip().split("=")
+                value = int(value) if value.isnumeric() else value
+                if key.isidentifier() and not iskeyword(key):
+                    self.data_dict[key] = value
+                else:
+                    raise ValueError("Invalid key!")
 
     def __getitem__(self, item: str):
-        return self.dict[item]
+        return self.data_dict[item]
 
     def __getattr__(self, key: str):
-        return self.dict[key]
+        return self.data_dict[key]

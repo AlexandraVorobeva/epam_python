@@ -1,12 +1,13 @@
 import sqlite3
-from typing import Callable, Tuple
+from typing import Callable
 
 
-def connect_database(func: Callable) -> sqlite3.Cursor:
+def connect_database(func: Callable) -> Callable:
+    """This decorator connects to an existing database
+    and opens a cursor to perform database operations.
+    """
+
     def wrapper(self, *args, **kwargs):
-        """This decorator connects to an existing database
-        and opens a cursor to perform database operations.
-        """
         with sqlite3.connect(self.database_name) as connection:
             cursor = connection.cursor()
             return func(self, cursor, *args, **kwargs)
@@ -32,7 +33,7 @@ class TableData:
         return cursor.fetchone()[0]
 
     @connect_database
-    def __getitem__(self, cursor, item: str) -> Tuple:
+    def __getitem__(self, cursor, item: str) -> tuple:
         cursor.execute(f"SELECT * from  {self.table_name} WHERE name ='{item}'")
         return cursor.fetchone()
 
@@ -42,6 +43,6 @@ class TableData:
         return cursor.fetchone()
 
     @connect_database
-    def __iter__(self, cursor) -> Tuple:
+    def __iter__(self, cursor) -> tuple:
         cursor.execute(f"SELECT * from {self.table_name}")
         return cursor
