@@ -17,4 +17,12 @@ from typing import Optional, Callable
 def universal_file_counter(
     dir_path: Path, file_extension: str, tokenizer: Optional[Callable] = None
 ) -> int:
-    pass
+    count = 0
+    for file in dir_path.glob("*." + file_extension):
+        with open(file) as fl:
+            if tokenizer:
+                for line in fl.readlines():
+                    count += len(tokenizer(line))
+            else:
+                count += sum(1 for _ in fl.readlines())
+    return count
