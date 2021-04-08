@@ -8,19 +8,19 @@ class KeyValueStorage:
     """
 
     def __init__(self, filename: str):
-        self.data_dict = {}
+        self.file_content = {}
         with open(filename, "r") as fl:
             file = fl.readlines()
             for line in file:
                 key, value = line.strip().split("=")
                 value = int(value) if value.isnumeric() else value
                 if key.isidentifier() and not iskeyword(key):
-                    self.data_dict[key] = value
+                    self.file_content[key] = value
                 else:
                     raise ValueError("Invalid key!")
 
     def __getitem__(self, item: str):
-        return self.data_dict[item]
+        return self.file_content[item]
 
     def __getattr__(self, key: str):
-        return self.data_dict[key]
+        return self.file_content[key]
