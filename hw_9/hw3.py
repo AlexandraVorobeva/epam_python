@@ -17,6 +17,19 @@ from typing import Optional, Callable
 def universal_file_counter(
     dir_path: Path, file_extension: str, tokenizer: Optional[Callable] = None
 ) -> int:
+    """
+    This function count lines in all files with that extension
+    if there are no tokenizer.
+    If a the tokenizer is not none, it will count tokens.
+
+    Args:
+        dir_path: path to directory
+        file_extension:extension of files
+        tokenizer: condition of the inputs
+
+    Returns: integer (count of lines or tokens)
+
+    """
     count = 0
     for file in dir_path.glob("*." + file_extension):
         with open(file) as fl:
@@ -24,5 +37,6 @@ def universal_file_counter(
                 for line in fl.readlines():
                     count += len(tokenizer(line))
             else:
-                count += sum(1 for _ in fl.readlines())
+                count += sum(1 for line in fl.readlines())
     return count
+

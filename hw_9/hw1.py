@@ -14,42 +14,31 @@ file2.txt:
 >>> list(merge_sorted_files(["file1.txt", "file2.txt"]))
 [1, 2, 3, 4, 5, 6]
 """
-from pathlib import Path
-from typing import List, Union, Iterator
+
+from typing import Iterator
 
 
-def merge_sorted_files(file_list: List[Union[Path, str], ...]) -> Iterator:
-    def get_value_from_file(path: str) -> int:
-        with open(path) as f:
-            for line in f:
-                yield int(line)
+def merge_sorted_files(file_list) -> Iterator:
+    """
+    This function merges integer from sorted files and returns an iterator.
 
-    def get_next_from_iterator(iterator: Generator) -> Optional[int]:
-        try:
-            value = next(iterator)
-        except StopIteration:
-            value = None
-        return value  # noqa
+    Args:
+        file_list: path to file
 
-    def merge_sorted_files(file_list: List[str]) -> Iterator:
+    Returns: iterator (sorted values from merged files)
 
-        first_arr = get_value_from_file(file_list[0])
-        second_arr = get_value_from_file(file_list[1])
-        first = next(first_arr)
-        second = next(second_arr)
+    >>> list(merge_sorted_files(["file1.txt"]))
+    [1, 3, 5]
+    >>> list(merge_sorted_files(["file1.txt", "file2.txt"]))
+    [1, 2, 3, 4, 5, 6]
+    >>> list(merge_sorted_files(["file1.txt", "file2.txt", "file3.txt"]))
+    [1, 2, 3, 4, 5, 5, 6, 7]
 
-        while True:
-            if second is None:
-                yield first
-                first = get_next_from_iterator(first_arr)
+    """
+    merged_list = []
+    for file in file_list:
+        with open(file, "r") as fl:
+            for line in fl:
+                merged_list.append(int(line.strip()))
 
-            elif first is None:
-                yield second
-                second = get_next_from_iterator(second_arr)
-
-            elif first < second:
-                yield first
-                first = get_next_from_iterator(first_arr)
-            else:
-                yield second
-                second = get_next_from_iterator(second_arr)
+    return (i for i in sorted(merged_list))

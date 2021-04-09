@@ -33,9 +33,6 @@ def supressor(exeption):
 
     Args:
         exeption: any exeption
-
-    Returns:
-
     """
     try:
         yield
