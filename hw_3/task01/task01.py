@@ -26,4 +26,3 @@ def cache(times: int):
         return func_cache
 
     return wrapper
-

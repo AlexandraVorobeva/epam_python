@@ -47,5 +47,3 @@ def read_magic_number(path: str) -> bool:
             return 1 <= num < 3
     except ValueError:
         raise ValueError("it must be a number")
-
-
