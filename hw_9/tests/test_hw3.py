@@ -3,6 +3,7 @@ from hw_9.hw3 import universal_file_counter
 
 test_dir = Path().resolve().parent
 
+
 def test_txt_counter():
     assert universal_file_counter(test_dir, "txt") == 8
 

@@ -15,30 +15,33 @@ file2.txt:
 [1, 2, 3, 4, 5, 6]
 """
 
-from typing import Iterator
 import heapq
+from typing import Generator, List
 
-def merge_sorted_files(file_list) -> Iterator:
+
+def unpacking(file_list: List[str]):
     """
-    This function merges integer from sorted files and returns an iterator.
+    This function opens files and transforms content in integer.
 
     Args:
-        file_list: path to file
+        file_list: list of paths to files
 
-    Returns: iterator (sorted values from merged files)
-
-    >>> list(merge_sorted_files(["file1.txt"]))
-    [1, 3, 5]
-    >>> list(merge_sorted_files(["file1.txt", "file2.txt"]))
-    [1, 2, 3, 4, 5, 6]
-    >>> list(merge_sorted_files(["file1.txt", "file2.txt", "file3.txt"]))
-    [1, 2, 3, 4, 5, 5, 6, 7]
+    Returns: generator of integers
 
     """
-    merged_list = []
-    for file in file_list:
-        with open(file, "r") as fl:
-            for line in fl:
-                merged_list.append(int(line.strip()))
+    for file in map(open, file_list):
+        yield (int(line.strip()) for line in file)
 
-    return (i for i in sorted(merged_list))
+
+def merge_sorted_files(file_list) -> Generator:
+    """
+    This function merges integer from sorted files and returns generator.
+
+    Args:
+        file_list: list of paths to files
+
+    Returns: generator
+
+    """
+    merged_gen = (i for i in unpacking(file_list))
+    yield from heapq.merge(*merged_gen)
