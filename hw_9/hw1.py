@@ -16,7 +16,7 @@ file2.txt:
 """
 
 from typing import Iterator
-
+import heapq
 
 def merge_sorted_files(file_list) -> Iterator:
     """

@@ -31,12 +31,11 @@ def universal_file_counter(
 
     """
     count = 0
-    for file in dir_path.glob("*." + file_extension):
-        with open(file) as fl:
+    for file in dir_path.glob("*.{}".format(file_extension)):
+        with open(file) as f:
             if tokenizer:
-                for line in fl.readlines():
+                for line in f.readlines():
                     count += len(tokenizer(line))
             else:
-                count += sum(1 for line in fl.readlines())
+                count += sum(1 for _ in f.readlines())
     return count
-

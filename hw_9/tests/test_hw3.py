@@ -9,5 +9,3 @@ def test_txt_counter():
 
 def test_token_count():
     assert universal_file_counter(test_dir, "txt", str.split) == 8
-
-
