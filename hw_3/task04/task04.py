@@ -34,3 +34,10 @@ def is_armstrong(number: int) -> bool:
     digits_list = [int(char) ** len(str(number)) for char in str(number)]
 
     return sum(digits_list) == number
+
+
+
+
+
+
+

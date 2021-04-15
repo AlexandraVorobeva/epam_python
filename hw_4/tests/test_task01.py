@@ -42,7 +42,10 @@ def test_read_magic_number_negative(file_name):
 
 @pytest.mark.parametrize(
     ("text"),
-    [("Hello"), ("World!")],
+    [
+        ("Hello"),
+        ("World!")
+    ],
 )
 def test_read_magic_number_value_error(file_name):
     with pytest.raises(ValueError, match="it must be a number"):

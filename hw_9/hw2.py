@@ -13,7 +13,6 @@ class Supressor:
     """
     Сontext manager, that suppresses passed exception.
     """
-
     def __init__(self, exeption):
         self.exeption = exeption
 

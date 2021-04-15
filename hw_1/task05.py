@@ -33,3 +33,4 @@ def find_maximal_subarray_sum(nums: List[int], k: int) -> int:
             if cur_sum_sub > max_sum_sub:
                 max_sum_sub = cur_sum_sub
     return max_sum_sub
+

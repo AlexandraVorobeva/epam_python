@@ -2,7 +2,7 @@ from datetime import timedelta
 
 import pytest
 
-from hw_5.oop_1 import Student, Teacher
+from hw_5.oop_1 import  Student, Teacher
 
 
 @pytest.fixture()
@@ -30,9 +30,11 @@ def test_create_teacher(teacher):
     assert teacher.first_name == "Daniil"
 
 
+
 def test_create_student(student):
     assert student.last_name == "Petrov"
     assert student.first_name == "Roman"
+
 
 
 def test_create_homework(expired_homework):

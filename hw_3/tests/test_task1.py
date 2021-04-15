@@ -40,3 +40,4 @@ def test_cacher_decorator_check_outputs(first, second):
     second = f(second)
 
     assert first is second
+
