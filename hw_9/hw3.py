@@ -39,3 +39,4 @@ def universal_file_counter(
             else:
                 count += sum(1 for _ in f.readlines())
     return count
+

@@ -11,3 +11,4 @@ def test_merge_sorted_files_one_file():
     actual_result = list(merge_sorted_files(["file_1.txt"]))
     expected_result = [4, 5, 6]
     assert actual_result == expected_result
+

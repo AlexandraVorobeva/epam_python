@@ -45,3 +45,4 @@ def merge_sorted_files(file_list) -> Generator:
     """
     merged_gen = (i for i in unpacking(file_list))
     yield from heapq.merge(*merged_gen)
+

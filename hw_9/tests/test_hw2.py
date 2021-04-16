@@ -9,3 +9,4 @@ def test_func_supressor():
 def test_class_supressor():
     with Supressor(IndexError):
         assert [][2]
+
