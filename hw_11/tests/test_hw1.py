@@ -9,3 +9,4 @@ def test_SimplifiedEnum():
     assert ColorsEnum.BLUE == "BLUE"
     assert ColorsEnum.ORANGE == "ORANGE"
     assert ColorsEnum.BLACK == "BLACK"
+

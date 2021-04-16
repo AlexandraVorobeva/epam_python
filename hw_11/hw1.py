@@ -42,3 +42,4 @@ class SimplifiedEnum(type):
         for item in dct[key]:
             dct[item] = item
         return super().__new__(cls, name, bases, dct)
+
