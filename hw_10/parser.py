@@ -132,7 +132,6 @@ async def fetch_sp500_additional_data(parsed_company_pages, company_url: str) ->
 
         potential_profit = get_potential_profit(company)
         preparing_company_data["profit"] = potential_profit
-        print(preparing_company_data)
         return preparing_company_data
 
 
