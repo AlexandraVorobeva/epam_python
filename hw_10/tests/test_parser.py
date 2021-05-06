@@ -11,7 +11,7 @@ def fake_create_soup_object():
 
 
 def test_get_price(fake_create_soup_object):
-    expected_result = Decimal('2375.00')
+    expected_result = Decimal("2375.00")
     soup = BeautifulSoup(fake_create_soup_object, "lxml")
     actual_result = get_price(soup)
     assert expected_result == actual_result
@@ -29,4 +29,4 @@ def test_get_potential_profit(fake_create_soup_object):
     soup = BeautifulSoup(fake_create_soup_object, "lxml")
     actual_result = get_potential_profit(soup)
     assert expected_result == actual_result
-
+            

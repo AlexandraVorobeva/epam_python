@@ -5,10 +5,19 @@ import aiohttp
 from bs4 import BeautifulSoup
 from collections import defaultdict
 import simplejson as json
+from requests import request
 
 
 BASE_URL = "https://markets.businessinsider.com/"
 COMPANY_STOCK_DATA = defaultdict(dict)
+
+
+def fetch_rub_usd_rate() -> Decimal:
+    """Cheking rub-usd exchange rate"""
+    page = request("get", "http://www.cbr.ru/scripts/XML_daily.asp")
+    soup = BeautifulSoup(page.text, "lxml")
+    exchange_rate = soup.find(id="R01235").find_next("value").get_text()
+    return Decimal(exchange_rate.replace(",", "."))
 
 
 async def fetch_page_content(url: str) -> str:
@@ -33,14 +42,6 @@ async def fetch_number_of_pages() -> int:
     page = await create_soup_object(start_page)
     pages = page.find("div", class_="finando_paging").find_all("a")
     return int(pages[-1].text)
-
-
-async def fetch_rub_usd_rate() -> Decimal:
-    """Cheking rub-usd exchange rate"""
-    url_cbr = "http://www.cbr.ru/scripts/XML_daily.asp"
-    page = await create_soup_object(url_cbr)
-    exchange_rate = page.find(id="R01235").find_next("value").get_text()
-    return Decimal(exchange_rate.replace(",", "."))
 
 
 async def save_parsed_company_page(url: str):
@@ -116,7 +117,6 @@ async def fetch_sp500_additional_data(parsed_company_pages, company_url: str) ->
     - profit
     - P/E
     """
-    rub_usd_rate = await fetch_rub_usd_rate()
     for company in parsed_company_pages:
         preparing_company_data = COMPANY_STOCK_DATA[company_url]
 
@@ -124,14 +124,14 @@ async def fetch_sp500_additional_data(parsed_company_pages, company_url: str) ->
         preparing_company_data["code"] = company_code_element.span.text[2:]
 
         price_usd = get_price(company)
-        price_rub = price_usd * rub_usd_rate
-        preparing_company_data["price"] = price_rub
+        preparing_company_data["price"] = price_usd
 
         pe = get_p_e_value(company)
         preparing_company_data["P/E"] = pe
 
         potential_profit = get_potential_profit(company)
         preparing_company_data["profit"] = potential_profit
+        print(preparing_company_data)
         return preparing_company_data
 
 
@@ -157,30 +157,32 @@ async def main() -> None:
     number_of_pages = await fetch_number_of_pages()
     for page in range(1, number_of_pages + 1):
         await fetch_sp500_companies_info(page)
-        await asyncio.sleep(0.05)
+        await asyncio.sleep(0.1)
 
 
 if __name__ == "__main__":
     loop = asyncio.get_event_loop()
     loop.run_until_complete(main())
 
+    rub_usd_rate = fetch_rub_usd_rate()
     save_to_json(
         "growth",
         "growth",
-        nlargest(10, COMPANY_STOCK_DATA.values(), key=lambda x: x["growth"])
+        nlargest(10, COMPANY_STOCK_DATA.values(), key=lambda x: x["growth"]),
     )
     save_to_json(
         "price",
         "price",
-        nlargest(10, COMPANY_STOCK_DATA.values(), key=lambda x: x['price'])
+        nlargest(
+            10, COMPANY_STOCK_DATA.values(), key=lambda x: x["price"] * rub_usd_rate
+        ),
     )
     save_to_json(
-        "p_e",
-        "P/E",
-        nsmallest(10, COMPANY_STOCK_DATA.values(), key=lambda x: x["P/E"])
+        "p_e", "P/E", nsmallest(10, COMPANY_STOCK_DATA.values(), key=lambda x: x["P/E"])
     )
     save_to_json(
         "profit",
         "profit",
-        nlargest(10, COMPANY_STOCK_DATA.values(), key=lambda x: x["profit"])
+        nlargest(10, COMPANY_STOCK_DATA.values(), key=lambda x: x["profit"]),
     )
+        
