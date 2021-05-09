@@ -28,41 +28,16 @@ assert order_1.final_price() == 50
 order_2 = Order(100, elder_discount)
 assert order_1.final_price() == 10
 """
-from abc import abstractmethod
 
 
 class Order:
     """Class initialize an order
     than make discount for it"""
-    def __init__(self, price: float, discount: float):
+    def __init__(self, price: float, discount_func):
         self.price = price
-        self._discount = discount
-
-    @property
-    def discount(self):
-        return self._discount
-
-    @discount.setter
-    def discount(self, discount: float):
-        self._discount = discount
+        self.discount = discount_func
 
     def final_price(self):
-        return self._discount.get_final_price(self.price)
+        return self.price - self.price * self.discount()
 
-
-class Discount:
-    """Abstract class for different discount programs"""
-    @abstractmethod
-    def get_final_price(self, price: float) -> float:
-        pass
-
-
-class MorningDiscount(Discount):
-    def get_final_price(self, price: float) -> float:
-        return price - price * 0.5
-
-
-class ElderDiscount(Discount):
-    def get_final_price(self, price: float) -> float:
-        return price - price * 0.9
 
