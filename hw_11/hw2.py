@@ -39,5 +39,4 @@ class Order:
 
     def final_price(self):
         return self.price - self.price * self.discount()
-
-
+    
