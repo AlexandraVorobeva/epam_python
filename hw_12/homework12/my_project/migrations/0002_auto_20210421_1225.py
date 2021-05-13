@@ -4,7 +4,7 @@ from django.db import migrations
 from datetime import datetime, timedelta
 
 
-def add_to_data_base(apps):
+def add_to_data_base(apps, schema_editor):
     Student = apps.get_model("my_project", "Student")
     Teacher = apps.get_model("my_project", "Teacher")
     Homework = apps.get_model("my_project", "Homework")
